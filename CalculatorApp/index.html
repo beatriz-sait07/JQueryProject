@@ -1,43 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+    integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
 
-  <h1>Aplicação que calcula a porcentagem de gorgeta para uma determinada loja</h1>
-  <button type="button"></button>
-  
+<body class="w-full h-screen bg-[#C4E4E7] font-mono">
+  <div class="titulo w-full h-1/6 bg-transparent flex items-center justify-center font-medium text-center">
+    <h1>Tip<br>Calculator</h1>
+  </div>
+
+  <div class="calculator w-full h-5/6 bg-white rounded-t-3xl bg-yellow-300 p-3">
+    <form action="#">
+      <div class="w-full h-screen-[40%] bg-blue-300 p-2">
+        <section id="dados" class="h-[10%] w-full bg-red-500">
+          <p>Conta</p>
+          <output id="bill" type="Number" class="saida">R$</output>
+        </section>
+        <section id="porcentagem" class="grid grid-cols-2 p-2 bg-red-400 h-[30%] w-full">
+          <button id="primeiro" type="button" click="somaTeste(5)">5%</button>
+          <button id="segundo" type="button" click="somaTeste(10)">10%</button>
+          <button id="terceiro" type="button" click="somaTeste(15)">15%</button>
+          <button id="quarto" type="button" click="somaTeste(25)">25%</button>
+          <button id="quinto" type="button" click="somaTeste(50)">50%</button>
+          <button id="sexto" type="button" click="somaTeste()">Escolher</button>
+        </section>
+      </div>
+      <section id="qtdPessoas" class="w-full h-[20%] bg-red-200">
+        <p>Número de Pessoas</p>
+        <div class="inputUsers flex border border-black rounded-md w-[60%] ">
+          <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+            fill="none" viewBox="0 0 26 26">
+            <path stroke="currentColor" stroke-width="2"
+              d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          </svg>
+          <input type="number" id="pessoas" class="border-none focus:border-none Select:border-none" minlength="0"
+            maxlength="10">
+        </div>
+      </section>
+
+      <section id="saida" class="bg-[#00474B] text-black w-full h-[40%] flex flex-col rounded-lg p-2">
+        <div id="individual" class="w-full flex flex-nowrap justify-between p-2 h-[30%]">
+          <div class="titulo text-gray-50">
+            <p>Percentual</p>
+            <p id="avisoPessoal" class="text-xs italic relative left-5">por pessoa</p>
+          </div>
+          <div class="value text-[#25C3AD]">
+            <p class="text-[#25C3AD]">R$ {{addPorcentagem()}}</p>
+          </div>
+        </div>
+
+        <div id="totalIndiv" class="p-2 h-[30%]">
+          <div id="individual" class="flex flex-nowrap justify-between">
+            <div class="titulo text-gray-50">
+              <p>Valor Total</p>
+              <p id="avisoPessoal" class="text-xs italic relative left-5">por pessoa</p>
+            </div>
+            <div class="value text-[#25C3AD]">
+              <p class="text-[#25C3AD]">R$ {{addPorcentagem()}}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div id="btn" class="flex justify-center h-[0%]">
+          <button class="bg-[#25C3AD] w-[60%]  p-1 rounded-md">Resetar</button>
+        </div>
+      </section>
+    </form>
+  </div>
+
   <!-- Bill
+    Select Tip %
+    5%/ 10% / 15% /25% / 50% / Custom
+  
+    Number of People
+  
+    Tip Amount
+    / person
+  
+    Total
+    / person
+  
+    Reset -->
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset -->
-
+  <script src="./js/index.js"></script>
 </body>
+
 </html>
