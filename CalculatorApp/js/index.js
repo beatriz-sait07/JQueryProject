@@ -1,13 +1,11 @@
-function addPorcentagem(porcentagem = 0) {
-    if (porcentagem === 0) {
-        console.log('Porcentagem escolhida pelo usuário.');
-        return;
+$(document).ready(function () {
+    function calcularPorcentagem(porcent) {
+        const valorConta = parseFloat($('#valorConta').val());
+        console.log(valorConta);
+        const pessoas = parseInt($('#qtdPessoas').val());
+        console.log(pessoas);
     }
+});
 
-    // Calcula a soma (supondo que tenha um valor de conta para aplicar a porcentagem)
-    // const soma = conta * (porcentagem / 100);
-    const soma = (100 * (porcentagem / 100));
+$(Element).find(".pct").css({ "background": "#25C3AD", "color": "white", "border-radius": "5px", "height": "45px", "font-size": "20px"});
 
-    // Atualiza o valor do output
-    document.getElementById('bill').textContent = `R$ ${soma.toFixed(2)}`;
-}
