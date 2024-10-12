@@ -7,5 +7,5 @@ $(document).ready(function () {
     }
 });
 
-$(Element).find(".pct").css({ "background": "#25C3AD", "color": "white", "border-radius": "5px", "height": "45px", "font-size": "20px"});
+$(Element).find(".pct").css({ "background": "#25C3AD", "color": "white", "border-radius": "5px", "height": "45px", "font-size": "20px" });
 

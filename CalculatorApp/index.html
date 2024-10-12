@@ -17,34 +17,41 @@
     <h1>Tip<br>Calculator</h1>
   </div>
 
-  <div class="calculator w-full h-5/6 bg-white rounded-t-3xl bg-yellow-300 p-3">
+  <div class="calculator w-full h-5/6 bg-white rounded-t-3xl bg-white p-3">
     <form action="#">
-      <div class="w-full h-screen-[40%] bg-blue-300 p-2">
-        <section id="dados" class="h-[10%] w-full bg-red-500">
-          <p>Conta</p>
-          <output id="bill" type="Number" class="saida">R$</output>
-        </section>
-        <section id="porcentagem" class="grid grid-cols-2 p-2 bg-red-400 h-[30%] w-full">
-          <button id="primeiro" type="button" click="somaTeste(5)">5%</button>
-          <button id="segundo" type="button" click="somaTeste(10)">10%</button>
-          <button id="terceiro" type="button" click="somaTeste(15)">15%</button>
-          <button id="quarto" type="button" click="somaTeste(25)">25%</button>
-          <button id="quinto" type="button" click="somaTeste(50)">50%</button>
-          <button id="sexto" type="button" click="somaTeste()">Escolher</button>
-        </section>
-      </div>
-      <section id="qtdPessoas" class="w-full h-[20%] bg-red-200">
-        <p>Número de Pessoas</p>
-        <div class="inputUsers flex border border-black rounded-md w-[60%] ">
-          <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="26" height="26"
-            fill="none" viewBox="0 0 26 26">
-            <path stroke="currentColor" stroke-width="2"
-              d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-          </svg>
-          <input type="number" id="pessoas" class="border-none focus:border-none Select:border-none" minlength="0"
-            maxlength="10">
+      <div id="entrada">
+        <div class="w-full h-screen-[40%] bg-blue-300  flex flex-col">
+          <section id="dados" class="h-[10%] w-full bg-red-500 flex flex-col">
+            <p>Conta</p>
+            <div class="bg-pink-500 w-full flex self-center rounded-md">
+              <label for="conta" class="w-[20px]">R$</label>
+              <input type="number" name="conta" id="valConta" class="flex-1 rounded-md text-end">
+            </div>
+          </section>
+          <section id="porcentagem" class="grid grid-cols-2 p-2 bg-red-400 h-[30%] w-full gap-3 ">
+            <button id="primeiro" type="button" click="somaTeste(5)" class="pct">5%</button>
+            <button id="segundo" type="button" click="somaTeste(10)" class="pct">10%</button>
+            <button id="terceiro" type="button" click="somaTeste(15)" class="pct">15%</button>
+            <button id="quarto" type="button" click="somaTeste(25)" class="pct">25%</button>
+            <button id="quinto" type="button" click="somaTeste(50)" class="pct">50%</button>
+            <button id="sexto" type="button" click="somaTeste()" class="pct">Escolher</button>
+          </section>
         </div>
-      </section>
+
+        <section id="qtdPessoas" class="w-full h-[20%] bg-red-200 flex flex-col">
+          <p>Número de Pessoas</p>
+          <div class="inputUsers flex border border-black rounded-md w-full">
+            <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+              fill="none" viewBox="0 0 26 26">
+              <path stroke="currentColor" stroke-width="2"
+                d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+            <input type="number" id="pessoas" class="border-none focus:border-none Select:border-none text-end flex-1 rounded-md p-1/2" minlength="0"
+              maxlength="10">
+          </div>
+        </section>
+
+</div>
 
       <section id="saida" class="bg-[#00474B] text-black w-full h-[40%] flex flex-col rounded-lg p-2">
         <div id="individual" class="w-full flex flex-nowrap justify-between p-2 h-[30%]">
